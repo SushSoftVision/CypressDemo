@@ -2,7 +2,9 @@
 .DS_store
 
 # Ignore node_modules folder
-node_modules/
+/node_modules
 cypress/screenshots
 cypress/videos
 cypress/logs
+Cypress/reports
+node_modules/

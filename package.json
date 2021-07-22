@@ -4,7 +4,7 @@
   "description": "My Project 001",
   "main": "index.js",
   "devDependencies": {
-    "cypress": "^7.6.0",
+    "cypress": "^7.7.0",
     "cypress-multi-reporters": "^1.5.0",
     "mocha": "^9.0.2",
     "mocha-multi-reporters": "^1.5.1",
@@ -15,13 +15,15 @@
   "scripts": {
     "clean:reports": "(if exist cypress\\reports (rmdir /Q /S cypress\\reports)) && mkdir cypress\\reports && mkdir cypress\\reports\\mocha  &&  mkdir cypress\\reports\\mochareports",
     "pretest": "npm run clean:reports",
-    "scriptsDev": "cypress run --spec cypress/integration/DemoTests/**/* --env url=devEnv",
-    "scriptsTest": "cypress run --spec cypress/integration/DemoTests/**/* --env url=testEnv",
+    "scriptsLocal": "cypress run --spec cypress/integration/DemoTests/**/* --env url=devEnv",
+    "scriptsDev": "cypress run --spec cypress/integration/DemoTests/**/* --env url=devEnv --record --key af640675-1aa7-4093-8419-5a0969a835ce",
+    "scriptsTest": "cypress run --spec cypress/integration/DemoTests/**/* --env url=testEnv --record --key af640675-1aa7-4093-8419-5a0969a835ce",
     "combine-reports": "mochawesome-merge cypress/reports/mocha/*.json > cypress/reports/mochareports/report.json",
     "generate-report": "marge cypress/reports/mochareports/report.json -f report -o cypress/reports/mochareports",
     "posttest": "npm run combine-reports && npm run generate-report",
     "qatests": "npm run scriptsTest || npm run posttest",
-    "devtests": "npm run scriptsDev || npm run posttest"
+    "devtests": "npm run scriptsDev || npm run posttest",
+    "localtests":"npm run scriptsLocal || npm run posttest"
   },
   "keywords": [],
   "author": "",
@@ -37,7 +39,6 @@
   "dependencies": {
     "cypress-cucumber-preprocessor": "^4.1.4"
   },
-  
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": true
   }
