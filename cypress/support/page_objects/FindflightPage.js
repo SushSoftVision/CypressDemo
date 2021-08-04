@@ -30,7 +30,7 @@ class FindflightPage{
         this.rdBtnRoundtrip().should('be.checked')           // radio button should be checked by default
         this.rdBtnOneway().should('not.be.checked')          // radio button should not be checked by default 
         cy.log('Selecting Passengers & fromPort starting from DropDowns and click on Continue')
-        this.ddPassengercount().click()
+        this.ddPassengercount().select('2')
         this.ddPassengercount().find('option').each(($el, index, $list) => {
             cy.log($el.text());
             console.log($el.text());
