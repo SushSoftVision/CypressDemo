@@ -38,11 +38,11 @@ describe("My first- test group -Using Page Obects", function(){
     it("Find a requird flight to travel-each", function(){
         loginPage.enterUserNameAndPswd(this.data.username,this.data.password)
         findflightPage.findArequiredFlightWithOptions();
-        cy.title().should('eq','Login: Mercury Tours'); 
+        cy.title().should('eq','Find a Flight: Mercury Tours:'); 
         
     })
 
-    it("Login with Invalid credentials-should Fail", function(){
+    it.only("Login with Invalid credentials-should Fail", function(){
         loginPage.enterUserNameAndPswd('mercury','wrongPassword');
         findflightPage.findArequiredFlight();
         cy.log('This will navigate to next page');
