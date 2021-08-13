@@ -23,7 +23,11 @@
     "posttest": "npm run combine-reports && npm run generate-report",
     "qatests": "npm run scriptsTest || npm run posttest",
     "devtests": "npm run scriptsDev || npm run posttest",
-    "localtests":"npm run scriptsLocal || npm run posttest"
+    "localtests": "npm run scriptsLocal || npm run posttest",
+    "cy:run:chrome": "cypress run --spec cypress/integration/DemoTests/**/* --browser chrome || npm run posttest",
+    "cy:run:firefox": "cypress run --spec cypress/integration/DemoTests/**/* --browser firefox || npm run posttest",
+    "cy:run:electron": "cypress run --spec cypress/integration/DemoTests/**/* --browser electron || npm run posttest",
+    "cy:run-dashboard": "cypress run --record --key af640675-1aa7-4093-8419-5a0969a835ce --spec cypress/integration/cucumber-tests/*.feature || npm run posttest"
   },
   "keywords": [],
   "author": "",
