@@ -4,13 +4,14 @@
   "description": "My Project 001",
   "main": "index.js",
   "devDependencies": {
-    "cypress": "^7.7.0",
+    "cypress": "7.7.0",
     "cypress-multi-reporters": "^1.5.0",
     "mocha": "^9.0.2",
     "mocha-multi-reporters": "^1.5.1",
     "mochawesome": "^6.2.2",
     "mochawesome-merge": "^4.2.0",
-    "mochawesome-report-generator": "^5.2.0"
+    "mochawesome-report-generator": "^5.2.0",
+    "multiple-cucumber-html-reporter": "^1.18.0"
   },
   "scripts": {
     "clean:reports": "(if exist cypress\\reports (rmdir /Q /S cypress\\reports)) && mkdir cypress\\reports && mkdir cypress\\reports\\mocha  &&  mkdir cypress\\reports\\mochareports",
@@ -44,6 +45,12 @@
     "cypress-cucumber-preprocessor": "^4.1.4"
   },
   "cypress-cucumber-preprocessor": {
-    "nonGlobalStepDefinitions": true
+    "nonGlobalStepDefinitions": true,
+    "cucumberJson": {
+      "generate": true,
+      "outputFolder": "cypress/cucumber-json",
+      "filePrefix": "",
+      "fileSuffix": ".cucumber"
+    }
   }
 }
