@@ -18,5 +18,6 @@
     "staging": "stg_env",
     "uat": "uat_env",
     "prod": "prod_env"
-  }
+  },
+  "video": false
 }
