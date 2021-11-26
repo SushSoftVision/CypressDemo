@@ -4,7 +4,7 @@
   "description": "My Project 001",
   "main": "index.js",
   "devDependencies": {
-    "cypress": "7.7.0",
+    "cypress": "^9.0.0",
     "cypress-multi-reporters": "^1.5.0",
     "mocha": "^9.0.2",
     "mocha-multi-reporters": "^1.5.1",
@@ -30,7 +30,6 @@
     "cy:run:electron": "cypress run --spec cypress/integration/DemoTests/**/* --browser electron || npm run posttest",
     "cy:run-dashboard": "cypress run --record --key af640675-1aa7-4093-8419-5a0969a835ce --spec cypress/integration/cucumber-tests/*.feature || npm run posttest",
     "bddScenarios": "cypress run --record --key af640675-1aa7-4093-8419-5a0969a835ce --spec cypress/integration/cucumber-tests/*.feature && node cucumber-html-report.js"
- 
   },
   "keywords": [],
   "author": "",

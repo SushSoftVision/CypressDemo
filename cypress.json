@@ -19,5 +19,9 @@
     "uat": "uat_env",
     "prod": "prod_env"
   },
-  "video": false
+  "video": false,
+    "retries": {
+      "runMode": 1,
+      "openMode": 1
+    }
 }
