@@ -3,6 +3,13 @@
 # Ignore node_modules folder
 node_modules/
 **/node_modules
+#Ignore screenshots and videos
 cypress/screenshots
 cypress/videos
+#Ignore log files
 cypress/logs
+#Ignore reports
+cypress/cucumber-json/
+cypress/reports/
+reportsBDD/
+
